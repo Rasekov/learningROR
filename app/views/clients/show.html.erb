@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @client.name %>
+    <%= @client.middle_name %>
+    <%= @client.surname %>
+  </h1>
+  <p class="lead">
+    <%= @client.email %>  | 
+    <%= @client.phone_number %>  |  
+  </p>
+  <br/>
 
-<%= render @client %>
-
-<div>
-  <%= link_to "Edit this client", edit_client_path(@client) %> |
-  <%= link_to "Back to clients", clients_path %>
-
-  <%= button_to "Destroy this client", @client, method: :delete %>
+<%= link_to 'Edit', edit_client_path(@client), class:"btn btn-secondary" %>
+<%= link_to 'Delete', @client, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+   
+<%= link_to 'Back', clients_path, class:"btn btn-dark" %>
 </div>
